@@ -6,6 +6,6 @@ services:
     ports:
       - "5049:5000"
     volumes:
-      - .:/flask_app
+      - ./flask-app:/flask_app
     environment:
       - FLASK_ENV=development
