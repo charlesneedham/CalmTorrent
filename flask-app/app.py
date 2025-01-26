@@ -1,11 +1,12 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, send_from_directory
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-from routes.rss_feed import bp as rss_feed_bp
+import os
+
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'your_secret_key'
     
-    app.register_blueprint(rss_feed_bp)
+
 
     login_manager = LoginManager()
     login_manager.init_app(app)
@@ -38,7 +39,11 @@ def create_app():
         logout_user()
         return redirect(url_for('login'))
 
-
+    @app.route('/rss_feed')
+    @login_required
+    def rss_feed():
+        rss_directory = os.path.join(app.root_path, 'rss_xml')
+        return send_from_directory(rss_directory, 'feed.xml')
 
     return app
 
