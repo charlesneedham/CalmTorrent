@@ -1,7 +1,7 @@
-from flask import send_from_directory, blueprints, Flask
+from flask import send_from_directory, Blueprint, Flask
 import os
 
-bp = blueprints('rss', __name__)
+bp = Blueprint('rss', __name__)
 
 app = Flask(__name__)
 
