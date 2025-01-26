@@ -2,19 +2,18 @@ from flask import Flask, render_template, redirect, url_for, request, send_from_
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 import os
 
+login_manager = LoginManager()
+
+class User(UserMixin):
+        def __init__(self, id):
+            self.id = id
+
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'your_secret_key'
     
-
-
-    login_manager = LoginManager()
     login_manager.init_app(app)
     login_manager.login_view = 'login'
-
-    class User(UserMixin):
-        def __init__(self, id):
-            self.id = id
 
     users = {'user': {'password': 'password'}}
 
