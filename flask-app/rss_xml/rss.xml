@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>My Torrent RSS Feed</title>
+        <link>http://your-server-url/rss.xml</link>
+        <description>Custom RSS feed for torrents</description>
+        <item>
+            <title>Torrent 1</title>
+            <link>magnet:?xt=urn:btih:HASH1&amp;dn=Torrent1</link>
+            <description>First torrent description</description>
+            <pubDate>Sun, 25 Jan 2025 12:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Torrent 2</title>
+            <link>magnet:?xt=urn:btih:HASH2&amp;dn=Torrent2</link>
+            <description>Second torrent description</description>
+            <pubDate>Sun, 25 Jan 2025 13:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
