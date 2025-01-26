@@ -1,7 +1,7 @@
 from flask import Flask, blueprints
 import os
 
-from routes import bp as rss_bp
+from routes.rss import bp as rss_bp
 
 def create_app():
     app = Flask(__name__)
